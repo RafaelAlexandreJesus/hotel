@@ -5,7 +5,7 @@ def conectar():
       host='localhost',
         user='root',
         password='',
-        database='escola',
+        database='hotel',
         cursorclass=pymysql.cursors.DictCursor  
     )
     return conn

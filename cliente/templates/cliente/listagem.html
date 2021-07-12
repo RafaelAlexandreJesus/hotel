@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+
+{% block 'titulo'%}Listagem{%endblock%}
+
+{% block 'conteudo'%}
+    <h1>Listagem De Clientes</h1><br>
+    {% for l in listaC%}
+        {{l.nome}} <br>
+    {% endfor %}
+{% endblock %}
