@@ -18,5 +18,6 @@ from django.urls import path, include
 from home import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='home')
+    path('', views.index, name='home'),
+    path('formulario/', include('cliente.urls')),
 ]
