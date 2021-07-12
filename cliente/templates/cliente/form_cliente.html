@@ -4,6 +4,7 @@
 
 {%block 'conteudo'%}
 <div class="container">
+  <a class="btn btn-success" href="{% url 'home' %}" style="float: right; margin-top: 20px;">Voltar</a>
   <h2>Cadastro de clientes</h2>
 
   <form method="post" action="{% url 'insere_cliente' %}">
@@ -39,7 +40,17 @@
         name="telefone"
       />
     </div>
-    <div class="form-group pb-5">
+    <div class="form-group">
+      <label for="profi">Profissão</label>
+      <input
+        id="profi"
+        class="form-control"
+        type="text"
+        placeholder="Qual a sua profissão?"
+        name="profi"
+      />
+    </div>
+    <div class="form-group">
       <label for="email">Email</label>
       <input
         id="email"
@@ -50,13 +61,13 @@
       />
     </div>
     <div class="form-group pb-5">
-      <label for="profi">Profissão</label>
+      <label for="senha">Senha</label>
       <input
-        id="profi"
+        id="senha"
         class="form-control"
         type="text"
-        placeholder="Qual a sua profissão?"
-        name="profi"
+        placeholder="Crie aqui sua senha"
+        name="senha"
       />
     </div>
     <div class="form-group">
