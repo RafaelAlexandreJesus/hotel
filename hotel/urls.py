@@ -21,5 +21,7 @@ from home import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cliente/', include('cliente.urls')),
-    path('', views.index, name='home')
+    path('', views.index, name='home'),
+    path('formulario/', include('cliente.urls')),
+
 ]

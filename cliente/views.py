@@ -10,6 +10,8 @@ def index(request):
         lista = listar.fetchall()
     return render(request, 'cliente/listagem.html', {'listaC' : lista})
 
+    return render(request, 'cliente/form_cliente.html')
+
 def insere_cliente(request):
     with c.cursor() as inserir:
         # nome
@@ -18,4 +20,7 @@ def insere_cliente(request):
         # tel
         sql = 'insert into cliente(nome, cpf, profissão, telefone) values(%s,%s,%s,%s)'
         inserir.execute(sql,())
+
+def formulario(request):
+    return render(request, 'cliente/form_cliente.html')
 
