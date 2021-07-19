@@ -27,8 +27,6 @@ SET time_zone = "+00:00";
 -- Estrutura para tabela `cliente`
 --
 
-create database `hotel`;
-
 CREATE TABLE `cliente` (
   `id` int(11) primary key auto_increment,
   `nome` varchar(30) NOT NULL,

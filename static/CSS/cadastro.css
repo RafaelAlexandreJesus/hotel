@@ -1,0 +1,24 @@
+.form-body {
+  height: 100%;
+  width: 100%;
+  background-color: #ebebeb;
+  -webkit-box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
+          box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.container {
+  padding: 100px 100px 500px 100px;
+}
+
+.container h2 {
+  color: #fff;
+}
+
+.container label {
+  color: #fff;
+  padding-top: 10px;
+}
+/*# sourceMappingURL=cadastro.css.map */
