@@ -1,36 +1,49 @@
 {%extends 'base.html'%}
 
+{% load static %}
+
 {%block 'titulo'%}Login{%endblock%}
 
 {%block 'conteudo'%}
-<div class="container">
-  <h2>Login</h2>
-
-  <form method="post" action="{% url 'logar' %}">
-    {% csrf_token %}
-    <div class="form-group pb-5">
-      <label for="email">Email</label>
-      <input
+<style>
+  .form-body{
+    background-image: url("{% static 'images/quarto.jpg' %}");
+  }
+</style>
+<body class="form-body">
+  <div class="container">
+    <a class="btn btn-danger" href="{% url 'home' %}" style="float: right; margin-top: 20px;">Voltar</a>
+    <a class="sem-login" href="{% url 'form_cliente' %}" >Não possui login?</a>
+    <h2>Login</h2>
+    
+    <form method="post" action="{% url 'logar' %}">
+      {% csrf_token %}
+      <div class="form-group pb-5">
+        <label for="email">Email</label>
+        <input
         id="email"
         class="form-control"
         type="text"
         placeholder="Digite seu email"
         name="email"
-      />
-    </div>
-        <div class="form-group pb-5">
-      <label for="email">Email</label>
-      <input
+        required
+        />
+      </div>
+      <div class="form-group pb-5">
+        <label for="email">Senha</label>
+        <input
         id="senha"
         class="form-control"
         type="password"
         placeholder="Digite a sua senha"
         name="senha"
-      />
-    </div>
-    <div class="form-group">
-      <button class="form-control btn btn-danger" type="submit">Logar</button>
-    </div>
-  </form>
-</div>
+        required
+        />
+      </div>
+      <div class="form-group">
+        <button class="form-control btn btn-success" type="submit">Logar</button>
+      </div>
+    </form>
+  </div>
+</body>
 {%endblock%}

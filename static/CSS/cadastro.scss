@@ -1,15 +1,30 @@
+@mixin link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+  float: right;
+  margin-top: 26px;
+  margin-right: 15px;
+
+  transition: all .5s;
+}
+
+@mixin link_hover {
+  color: rgba(255, 255, 255, 1);
+  transition: all .5s;
+}
+
 .form-body {
   height: 100%;
   width: 100%;
   background-color: rgb(235, 235, 235);
-  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0 0 0 3000px rgba(0, 0, 0, 0.7);
   background-position: center;
   background-size: cover;
   overflow: hidden;
 }
 
 .container {
-  padding: 100px 100px 500px 100px;
+  padding: 100px 100px 800px 100px;
   h2 {
     color: #fff;
   }
@@ -17,4 +32,18 @@
     color: #fff;
     padding-top: 10px;
   }
+  input {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid #fff;
+    color: #fff;
+  }
+}
+
+.sem-login, .com-login {
+  @include link();
+}
+
+.sem-login:hover,
+.com-login:hover{
+  @include link_hover();
 }

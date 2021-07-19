@@ -1,4 +1,6 @@
 from django.shortcuts import render
+import conexao
+c = conexao.conectar()
 
 def index(request):
     return render(request, 'login/index.html')
