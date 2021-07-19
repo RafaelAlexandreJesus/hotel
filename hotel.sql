@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cliente` (
-  `id` int(11) NOT NULL,
+  `id` int(11) primary key auto_increment,
   `nome` varchar(30) NOT NULL,
   `cpf` varchar(20) NOT NULL,
   `profissao` varchar(40) NOT NULL,
@@ -51,7 +51,7 @@ INSERT INTO `cliente` (`id`, `nome`, `cpf`, `profissao`, `telefone`, `email`, `s
 --
 
 CREATE TABLE `reserva` (
-  `id` int(11) NOT NULL,
+  `id` int(11) primary key auto_increment,
   `idcliente` int(11) DEFAULT NULL,
   `dataInicio` varchar(30) NOT NULL,
   `dataFinal` varchar(30) NOT NULL,
@@ -67,9 +67,6 @@ CREATE TABLE `reserva` (
 --
 -- Índices de tabela `cliente`
 --
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`id`);
-
 --
 -- Índices de tabela `reserva`
 --

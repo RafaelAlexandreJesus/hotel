@@ -9,3 +9,5 @@ def conectar():
         cursorclass=pymysql.cursors.DictCursor  
     )
     return conn
+
+print("pimba")

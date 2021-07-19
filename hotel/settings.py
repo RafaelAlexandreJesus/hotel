@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'cliente.apps.ClienteConfig',
     'home.apps.HomeConfig',
     'reserva.apps.ReservaConfig',
+    'administracao.apps.AdministracaoConfig',
+    'login.apps.LoginConfig'
 ]
 
 MIDDLEWARE = [
