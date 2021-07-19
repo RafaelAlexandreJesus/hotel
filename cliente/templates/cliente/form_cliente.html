@@ -12,7 +12,8 @@
 </style>
 <body class="form-body">
   <div class="container">
-    <a class="btn btn-success" href="{% url 'home' %}" style="float: right; margin-top: 20px;">Voltar</a>
+    <a class="btn btn-danger" href="{% url 'home' %}" style="float: right; margin-top: 20px;">Voltar</a>
+    <a class="com-login" href="{% url 'login' %}">Já possui cadastro?</a>
     <h2>Cadastro de clientes</h2>
     
     <form method="post" onsubmit="success()" action="{% url 'insere_cliente' %}">
@@ -25,6 +26,7 @@
         type="text"
         placeholder="Digite seu nome completo"
         name="nome"
+        required
         />
       </div>
       <div class="form-group">
@@ -36,6 +38,7 @@
         placeholder="Digite seu CPF, apenas numeros"
         name="cpf"
         maxlength="11"
+        required
         />
       </div>
       <div class="form-group">
@@ -46,6 +49,7 @@
         type="text"
         placeholder="Digite seu telefone"
         name="telefone"
+        required
         />
       </div>
       <div class="form-group">
@@ -56,6 +60,7 @@
         type="text"
         placeholder="Qual a sua profissão?"
         name="profi"
+        required
         />
       </div>
       <div class="form-group">
@@ -66,6 +71,7 @@
         type="text"
         placeholder="Digite seu email"
         name="email"
+        required
         />
       </div>
       <div class="form-group pb-5">
@@ -76,10 +82,11 @@
         type="password"
         placeholder="Crie aqui sua senha"
         name="senha"
+        required
         />
       </div>
       <div class="form-group">
-        <button class="form-control btn btn-danger" type="subimit">Salvar</button>
+        <button class="form-control btn btn-success" type="subimit">Salvar</button>
       </div>
     </form>
   </div>
