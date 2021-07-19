@@ -1,5 +1,22 @@
-{%extends 'base.html'%} {% load static %} {%block 'titulo'%} HOME {%endblock%}
+{%extends 'base.html'%} {% load static %} {%block 'titulo'%} Hotel Trivago | Viva seus melhores momentos! {%endblock%}
 {%block 'conteudo'%}
+<style>
+  @keyframes background {
+    0%,
+    100% {
+      background: url("{%static 'images/exterior.jpg' %}");
+    }
+    25% {
+      background: url("{%static 'images/piscina.jpg' %}");
+    }
+    50% {
+      background: url("{%static 'images/exterior-2.jpg' %}");
+    }
+    75% {
+      background: url("{%static 'images/quarto.jpg' %}");
+    }
+  }
+</style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -46,9 +63,14 @@
   </div>
 </nav>
 
-<div class="shadow">
-  <div class="landing">
-    <img src="{% static 'images/exterior.jpg' %}" alt="" />
-  </div>
+<div class="landing">
+  <h2>Bem vind@ ao Trivago</h2>
+  <p>Viva seus melhores momentos!</p>
+  <a href="">Realize sua reserva</a>
 </div>
+
+<section class="description">
+  <h2>Um ambiente preparado especialmente para você</h2>
+  
+</section>
 {%endblock%}

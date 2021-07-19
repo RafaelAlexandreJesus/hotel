@@ -19,7 +19,7 @@ def insere_cliente(request):
         sql = 'insert into cliente(nome, cpf, profissao, telefone, email, senha) values(%s,%s,%s,%s,%s,%s)'
         inserir.execute(sql,(nome, cpf, profissao, tel, email, senha))
         c.commit()
-    return render(request, 'cliente/form_cliente.html')
+    return render(request, '../../home/templates/home/index.html')
 
 def formulario(request):
     return render(request, 'cliente/form_cliente.html')
