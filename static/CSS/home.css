@@ -1,0 +1,118 @@
+.landing {
+  height: 830px;
+  width: 100%;
+  -webkit-animation: background 20s infinite;
+          animation: background 20s infinite;
+  -webkit-box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.landing p,
+.landing h2 {
+  color: #fff;
+  font-weight: 400;
+}
+
+.landing a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.landing a:hover {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@-webkit-keyframes background {
+  0%,
+  100% {
+    -webkit-box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+    background-position: center;
+    background-size: cover;
+  }
+  25% {
+    -webkit-box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+    background-position: center;
+    background-size: cover;
+  }
+  50% {
+    -webkit-box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+    background-position: center;
+    background-size: cover;
+  }
+  75% {
+    -webkit-box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@keyframes background {
+  0%,
+  100% {
+    -webkit-box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+    background-position: center;
+    background-size: cover;
+  }
+  25% {
+    -webkit-box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+    background-position: center;
+    background-size: cover;
+  }
+  50% {
+    -webkit-box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+    background-position: center;
+    background-size: cover;
+  }
+  75% {
+    -webkit-box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+    background-position: center;
+    background-size: cover;
+  }
+}
+/*# sourceMappingURL=home.css.map */
