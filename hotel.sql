@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Jul-2021 às 09:06
+-- Tempo de geração: 12/07/2021 às 16:52
 -- Versão do servidor: 10.4.19-MariaDB
--- versão do PHP: 8.0.6
+-- Versão do PHP: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,27 +24,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cliente`
+-- Estrutura para tabela `cliente`
 --
 
 create database `hotel`;
 
 CREATE TABLE `cliente` (
-  `id` int(11) NOT NULL,
+  `id` int(11) primary key auto_increment,
   `nome` varchar(30) NOT NULL,
   `cpf` varchar(20) NOT NULL,
-  `profissão` varchar(40) NOT NULL,
-  `telefone` varchar(13) NOT NULL
+  `profissao` varchar(40) NOT NULL,
+  `telefone` varchar(13) NOT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `senha` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Despejando dados para a tabela `cliente`
+--
+
+INSERT INTO `cliente` (`id`, `nome`, `cpf`, `profissao`, `telefone`, `email`, `senha`) VALUES
+(1, 'Rafael Barbosa', '28732987609', 'programador', '19933334444', 'rafabdasilva12@gmail.com', '123');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `reserva`
+-- Estrutura para tabela `reserva`
 --
 
 CREATE TABLE `reserva` (
-  `id` int(11) NOT NULL,
+  `id` int(11) primary key auto_increment,
   `idcliente` int(11) DEFAULT NULL,
   `dataInicio` varchar(30) NOT NULL,
   `dataFinal` varchar(30) NOT NULL,
@@ -58,27 +67,24 @@ CREATE TABLE `reserva` (
 --
 
 --
--- Índices para tabela `cliente`
+-- Índices de tabela `cliente`
 --
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`id`);
-
 --
--- Índices para tabela `reserva`
+-- Índices de tabela `reserva`
 --
 ALTER TABLE `reserva`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idcliente` (`idcliente`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `reserva`
@@ -87,11 +93,11 @@ ALTER TABLE `reserva`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `reserva`
+-- Restrições para tabelas `reserva`
 --
 ALTER TABLE `reserva`
   ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`idcliente`) REFERENCES `cliente` (`id`);

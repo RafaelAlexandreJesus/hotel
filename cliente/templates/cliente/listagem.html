@@ -5,6 +5,11 @@
 {% block 'conteudo'%}
     <h1>Listagem De Clientes</h1><br>
     {% for l in listaC %}
-        {{l.cpf}} <br>
+        {{l.id}}
+        {{l.nome}}
+        {{l.cpf}}
+        {{l.profissao}}
+        {{l.telefone}}
+        {{l.email}} <br>
     {% endfor %}
 {% endblock %}
