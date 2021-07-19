@@ -4,11 +4,7 @@ c = conexao.conectar()
 
 # Create your views here.
 def index(request):
-    with c.cursor() as listar:
-        sql = "select * from cliente"
-        listar.execute(sql)
-        lista = listar.fetchall()
-    return render(request, 'cliente/listagem.html', {'listaC' : lista})
+    ...
 
 def insere_cliente(request):
     with c.cursor() as inserir:

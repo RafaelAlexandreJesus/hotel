@@ -18,10 +18,12 @@ from django.urls import path, include
 
 import cliente
 import login
+import administracao
 from home import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='home'),
     path('cliente/', include('cliente.urls')),
-    path('login/', include('login.urls'))
+    path('login/', include('login.urls')),
+    path('adm/', include('administracao.urls')),
 ]
