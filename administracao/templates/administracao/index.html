@@ -30,10 +30,15 @@
             <td>{{dados.profissao}}</td>
 
             <td><button class="btn btn-primary" type="submit" id="editar" name="editar" value="{{dados.id}}">Editar</button></td>
-            <td><a href="#" class="btn btn-danger">Excluir</a></td>
+
         </tr>
-        {%endfor%}
+
      </form>
+          <form method="post" action="{% url 'excluir_adm' %}">
+                {% csrf_token %}
+                <td><button class="btn btn-danger"  type="submit" id="excluir" name="excluir" value="{{dados.id}}">Excluir</button></td>
+            </form>
+        {%endfor%}
     </table>
 </div>
 {%endblock%}

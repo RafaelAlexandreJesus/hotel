@@ -24,11 +24,7 @@ def insere_cliente_adm(request):
         sql = 'insert into cliente(nome, cpf, profissao, telefone, email, senha) values(%s,%s,%s,%s,%s,%s)'
         inserir.execute(sql,(nome, cpf, profissao, tel, email, senha))
         c.commit()
-    with c.cursor() as listar:
-        sql = "select * from cliente"
-        listar.execute(sql)
-        lista = listar.fetchall()
-    return render(request, 'administracao/index.html', {'listaC': lista})
+    return index(request)
 
 def editar(request):
     editar = request.POST.get('editar')
@@ -47,15 +43,22 @@ def editar_banco(request):
     senha = request.POST.get('senha')
     salva = request.POST.get('salva')
 
-    with c.cursor() as listar:
-        sql = "select * from cliente"
-        listar.execute(sql)
-        lista = listar.fetchall()
-
     with c.cursor() as editarB:
-        sql = "update cliente set nome = %s, cpf = %s, telefone = %s, profissao = %s, email = %s, senha = %s where id = 1"
-        execucao = editarB.execute(sql, (nome, cpf, telefone, profi, email, senha))
+        sql = "update cliente set nome = %s, cpf = %s, telefone = %s, profissao = %s, email = %s, senha = %s where id = %s"
+        execucao = editarB.execute(sql, (nome, cpf, telefone, profi, email, senha, salva))
+        c.commit()
         if execucao != 0:
-            return render(request, 'administracao/index.html', {'listaC': lista})
+            return index(request)
 
-    return render(request, 'administracao/editar_cliente.html', {'listaEdita': lista})
+    return index(request)
+
+def excluir(request):
+    exclui = request.POST.get('excluir')
+    with c.cursor() as excluir:
+        sql = "delete from cliente where id = %s"
+        execucao = excluir.execute(sql, (exclui))
+        c.commit()
+        if execucao != 0:
+            return index(request)
+
+    return index(request)
