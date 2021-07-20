@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{%block 'titulo'%}Cadastro de clientes{%endblock%} 
+{%block 'titulo'%}Editar Cliente{%endblock%}
 
 {%block 'conteudo'%}
 <style>
@@ -10,20 +10,24 @@
     background-image: url("{% static 'images/hall.jpg' %}");
   }
 </style>
+
+
 <body class="form-body">
   <div class="container">
     <a class="btn btn-success" href="{% url 'adm' %}" style="float: right; margin-top: 20px;">Voltar</a>
-    <h2>Cadastro de clientes</h2>
+    <h2>Editar Cliente</h2>
     
-    <form method="post" onsubmit="success()" action="{% url 'insere_cliente' %}">
+    <form method="post" action="{% url 'editar_adm' %}">
+
       {% csrf_token %}
+      {% for dados in listaEdita%}
       <div class="form-group">
         <label for="nome">Nome</label>
         <input
         id="nome"
         class="form-control"
         type="text"
-        placeholder="Digite seu nome completo"
+        value="{{dados.nome}}"
         name="nome"
         />
       </div>
@@ -33,7 +37,7 @@
         id="cpf"
         class="form-control"
         type="text"
-        placeholder="Digite seu CPF, apenas numeros"
+        value="{{dados.cpf}}"
         name="cpf"
         maxlength="11"
         />
@@ -44,7 +48,7 @@
         id="tel"
         class="form-control"
         type="text"
-        placeholder="Digite seu telefone"
+        value="{{dados.telefone}}"
         name="telefone"
         />
       </div>
@@ -54,7 +58,7 @@
         id="profi"
         class="form-control"
         type="text"
-        placeholder="Qual a sua profissão?"
+        value="{{dados.profissao}}"
         name="profi"
         />
       </div>
@@ -64,7 +68,7 @@
         id="email"
         class="form-control"
         type="text"
-        placeholder="Digite seu email"
+        value="{{dados.email}}"
         name="email"
         />
       </div>
@@ -73,14 +77,16 @@
         <input
         id="senha"
         class="form-control"
-        type="password"
-        placeholder="Crie aqui sua senha"
+        type="text"
+        value="{{dados.senha}}"
         name="senha"
         />
       </div>
+
       <div class="form-group">
-        <button class="form-control btn btn-danger" type="subimit">Salvar</button>
+        <button class="form-control btn btn-danger" type="subimit" id="salva" name="salva"  value="{{dados.id}}" >Salvar</button>
       </div>
+      {% endfor %}
     </form>
   </div>
 </body>

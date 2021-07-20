@@ -7,7 +7,8 @@
     <a class="btn btn-success" href="{% url 'form_cliente_ADM' %} " style="float: right; margin: 20px 10px 0px 0px;">Cadastrar</a>
     <h3>Clientes cadastrados</h3>
     <table class="table" colspan="3">
-
+     <form method="post" action="{% url 'form_edita_cliente_ADM' %}">
+         {% csrf_token %}
     <thead>
         <td>ID</td>
         <td>Nome</td>
@@ -18,7 +19,7 @@
         <td>Profissão</td>
         <td>Opçoes</td>
     </thead>
-     {%for dados in listaC %}
+        {%for dados in listaC %}
         <tr>
             <td>{{dados.id}}</td>
             <td>{{dados.nome}}</td>
@@ -27,10 +28,12 @@
             <td>{{dados.email}}</td>
             <td>{{dados.senha}}</td>
             <td>{{dados.profissao}}</td>
-            <td><a href="#" class="btn btn-primary">Editar</a></td>
+
+            <td><button class="btn btn-primary" type="submit" id="editar" name="editar" value="{{dados.id}}">Editar</button></td>
             <td><a href="#" class="btn btn-danger">Excluir</a></td>
         </tr>
         {%endfor%}
+     </form>
     </table>
 </div>
 {%endblock%}
