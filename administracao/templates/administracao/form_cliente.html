@@ -15,7 +15,7 @@
     <a class="btn btn-success" href="{% url 'adm' %}" style="float: right; margin-top: 20px;">Voltar</a>
     <h2>Cadastro de clientes</h2>
     
-    <form method="post" onsubmit="success()" action="{% url 'insere_cliente' %}">
+    <form method="post" action="{% url 'insere_cliente_adm' %}">
       {% csrf_token %}
       <div class="form-group">
         <label for="nome">Nome</label>
