@@ -1,5 +1,5 @@
-{%extends 'base.html'%} {% load static %} {%block 'titulo'%} Hotel Trivago | Viva seus melhores momentos! {%endblock%}
-{%block 'conteudo'%}
+{%extends 'base.html'%} {% load static %} {%block 'titulo'%} Hotel Trivago |
+Viva seus melhores momentos! {%endblock%} {%block 'conteudo'%}
 <style>
   @keyframes background {
     0%,
@@ -38,13 +38,21 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">Login</a></li>
-            <li>
-              <a class="nav-link" href="{% url 'form_cliente' %}">Cadastrar</a>
-            </li>
-          </ul>
+          <a class="nav-link" aria-current="page" href="#footer">Contato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'form_cliente' %}">Cadastrar</a>
+        </li>
+        <li class="nav-item" id="responsive">
+          <a class="nav-link" href="{% url 'editarADM' %}">Editar Meu Perfil</a>
         </li>
       </ul>
+      <span class="navbar-text" href="{% url 'editarADM' %}" id="profile">
+        <i class="far fa-user-circle"></i>
+      </span>
     </div>
   </div>
 </nav>
@@ -57,47 +65,47 @@
 
 <div class="footer">
   <div class="inner-footer">
-
-
     <div class="footer-items">
       <h1>Hotel Trivago</h1>
-      <p>Viva seus melhores momentos com um ambiente preparado especialmente para você!</p>
+      <p>
+        Viva seus melhores momentos com um ambiente preparado especialmente para
+        você!
+      </p>
     </div>
-
 
     <div class="footer-items">
       <h3>Links Rápidos</h3>
       <div class="border1"></div>
-        <ul>
-          <a href="#"><li>Home</li></a>
-          <a href="{% url 'login' %}"><li>Login</li></a>
-          <a href="{% url 'form_cliente' %}"><li>Cadastro</li></a>
-          <a href="#"><li>Reservar</li></a>
-        </ul>
+      <ul>
+        <a href="#"><li>Home</li></a>
+        <a href="{% url 'login' %}"><li>Login</li></a>
+        <a href="{% url 'form_cliente' %}"><li>Cadastro</li></a>
+        <a href="#"><li>Reservar</li></a>
+      </ul>
     </div>
 
-
-    <div class="footer-items">
+    <div class="footer-items" id="footer">
       <h3>Contato</h3>
       <div class="border1"></div>
-        <ul>
-          <li><i class="fa fa-map-marker" aria-hidden="true"></i>Rafael Jesus, Rafael Barbosa</li>
-          <li><i class="fa fa-phone" aria-hidden="true"></i>(19) 98764 8115</li>
-          <li><i class="fa fa-envelope" aria-hidden="true"></i>jorge1990@gmail.com</li>
-        </ul> 
-      
+      <ul>
+        <li>
+          <i class="fa fa-map-marker" aria-hidden="true"></i>Rafael Jesus,
+          Rafael Barbosa
+        </li>
+        <li><i class="fa fa-phone" aria-hidden="true"></i>(19) 98764 8115</li>
+        <li>
+          <i class="fa fa-envelope" aria-hidden="true"></i>jorge1990@gmail.com
+        </li>
+      </ul>
 
-        <div class="social-media">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-google-plus-square"></i></a>
-        </div> 
+      <div class="social-media">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-google-plus-square"></i></a>
+      </div>
     </div>
   </div>
-  
 
-  <div class="footer-bottom">
-    Copyright &copy; Hotel Trivago 2021.
-  </div>
+  <div class="footer-bottom">Copyright &copy; Hotel Trivago 2021.</div>
 </div>
 {%endblock%}

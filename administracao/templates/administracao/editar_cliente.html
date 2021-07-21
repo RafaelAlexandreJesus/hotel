@@ -29,6 +29,9 @@
         type="text"
         value="{{dados.nome}}"
         name="nome"
+        maxlength="40"
+        onkeypress="return words()"
+        required
         />
       </div>
       <div class="form-group">
@@ -40,6 +43,8 @@
         value="{{dados.cpf}}"
         name="cpf"
         maxlength="11"
+        onkeypress="return numbers()"
+        required
         />
       </div>
       <div class="form-group">
@@ -50,6 +55,9 @@
         type="text"
         value="{{dados.telefone}}"
         name="telefone"
+        maxlength="10"
+        onkeypress="return numbers()"
+        required
         />
       </div>
       <div class="form-group">
@@ -60,6 +68,9 @@
         type="text"
         value="{{dados.profissao}}"
         name="profi"
+        maxlength="20"
+        onkeypress="return words()"
+        required
         />
       </div>
       <div class="form-group">
@@ -67,9 +78,11 @@
         <input
         id="email"
         class="form-control"
-        type="text"
+        type="email"
         value="{{dados.email}}"
         name="email"
+        maxlength="30"
+        required
         />
       </div>
       <div class="form-group pb-5">

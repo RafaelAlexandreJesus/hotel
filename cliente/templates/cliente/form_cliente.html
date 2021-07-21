@@ -26,6 +26,8 @@
         type="text"
         placeholder="Digite seu nome completo"
         name="nome"
+        maxlength="40"
+        onkeypress="return words()"
         required
         />
       </div>
@@ -38,6 +40,7 @@
         placeholder="Digite seu CPF, apenas numeros"
         name="cpf"
         maxlength="11"
+        onkeypress="return numbers()"
         required
         />
       </div>
@@ -49,6 +52,8 @@
         type="text"
         placeholder="Digite seu telefone"
         name="telefone"
+        maxlength="10"
+        onkeypress="return numbers()"
         required
         />
       </div>
@@ -60,6 +65,8 @@
         type="text"
         placeholder="Qual a sua profissão?"
         name="profi"
+        maxlength="20"
+        onkeypress="return words()"
         required
         />
       </div>
@@ -68,9 +75,10 @@
         <input
         id="email"
         class="form-control"
-        type="text"
+        type="email"
         placeholder="Digite seu email"
         name="email"
+        maxlength="30"
         required
         />
       </div>

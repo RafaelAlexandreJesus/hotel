@@ -11,6 +11,25 @@
   background-size: cover;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+#profile {
+  width: 100%;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 10px 15px 0 0;
+  cursor: pointer;
+}
+
+#responsive{
+  display: none;
+  width: 100%;
+}
+
 .landing {
   height: 830px;
   width: 100%;
@@ -53,5 +72,14 @@
   }
   75% {
     @include background();
+  }
+}
+
+@media(max-width: 990px){
+  #profile{
+    display: none;
+  }
+  #responsive{
+    display: flex;
   }
 }
