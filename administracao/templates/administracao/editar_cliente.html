@@ -25,6 +25,9 @@
         type="text"
         placeholder="Digite seu nome completo"
         name="nome"
+        maxlength="40"
+        onkeypress="return words()"
+        required
         />
       </div>
       <div class="form-group">
@@ -36,6 +39,8 @@
         placeholder="Digite seu CPF, apenas numeros"
         name="cpf"
         maxlength="11"
+        onkeypress="return numbers()"
+        required
         />
       </div>
       <div class="form-group">
@@ -46,6 +51,9 @@
         type="text"
         placeholder="Digite seu telefone"
         name="telefone"
+        maxlength="10"
+        onkeypress="return numbers()"
+        required
         />
       </div>
       <div class="form-group">
@@ -56,6 +64,9 @@
         type="text"
         placeholder="Qual a sua profissão?"
         name="profi"
+        maxlength="20"
+        onkeypress="return words()"
+        required
         />
       </div>
       <div class="form-group">
@@ -66,6 +77,8 @@
         type="text"
         placeholder="Digite seu email"
         name="email"
+        maxlength="30"
+        required
         />
       </div>
       <div class="form-group pb-5">
@@ -76,10 +89,11 @@
         type="password"
         placeholder="Crie aqui sua senha"
         name="senha"
+        required
         />
       </div>
       <div class="form-group">
-        <button class="form-control btn btn-danger" type="subimit">Salvar</button>
+        <button class="form-control btn btn-success" type="subimit">Salvar</button>
       </div>
     </form>
   </div>
