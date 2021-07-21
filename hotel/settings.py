@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'reserva.apps.ReservaConfig',
     'administracao.apps.AdministracaoConfig',
-    'login.apps.LoginConfig'
+    'login.apps.LoginConfig',
+    'quarto.apps.QuartoConfig'
 ]
 
 MIDDLEWARE = [

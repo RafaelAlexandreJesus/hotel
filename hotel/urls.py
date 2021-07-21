@@ -19,6 +19,8 @@ from django.urls import path, include
 import cliente
 import login
 import administracao
+import reserva
+import quarto
 from home import views
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +28,5 @@ urlpatterns = [
     path('cliente/', include('cliente.urls')),
     path('login/', include('login.urls')),
     path('adm/', include('administracao.urls')),
+    path('reserva/', include('reserva.urls')),
 ]

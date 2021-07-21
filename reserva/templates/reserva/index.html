@@ -50,9 +50,23 @@
 </nav>
 
 <div class="landing">
-  <h2>Bem vind@ ao Trivago</h2>
-  <p>Viva seus melhores momentos!</p>
-  <a href="{% url 'reserva' %}">Realize sua reserva</a>
+  <h2>Quartos Disponiveis</h2>
+  <table class="table" colspan="3">
+    <thead style="color: white">
+        <td>N° do Quarto</td>
+        <td>Status</td>
+    </thead>
+         {% for dados in listaQ %}
+        <tr style="color: white">
+            <td>{{dados.numQuarto}}</td>
+            <td>{{dados.status}}</td>
+            <form method="post" action="{% url 'reservarQ' %}">
+                {% csrf_token %}
+                <td><button class="btn btn-success"  type="submit" id="reservar" name="reservar" value="{{dados.numQuarto}}">Reservar Quarto</button></td>
+            </form>
+        </tr>
+        {% endfor %}
+    </table>
 </div>
 
 <div class="footer">
@@ -84,17 +98,17 @@
           <li><i class="fa fa-map-marker" aria-hidden="true"></i>Rafael Jesus, Rafael Barbosa</li>
           <li><i class="fa fa-phone" aria-hidden="true"></i>(19) 98764 8115</li>
           <li><i class="fa fa-envelope" aria-hidden="true"></i>jorge1990@gmail.com</li>
-        </ul> 
-      
+        </ul>
+
 
         <div class="social-media">
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-facebook"></i></a>
           <a href="#"><i class="fab fa-google-plus-square"></i></a>
-        </div> 
+        </div>
     </div>
   </div>
-  
+
 
   <div class="footer-bottom">
     Copyright &copy; Hotel Trivago 2021.
