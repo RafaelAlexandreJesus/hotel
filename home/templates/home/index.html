@@ -1,5 +1,8 @@
 {%extends 'base.html'%} {% load static %} {%block 'titulo'%} Hotel Trivago |
 Viva seus melhores momentos! {%endblock%} {%block 'conteudo'%}
+<head>
+  <link rel="stylesheet" href="{% static 'CSS/home.css' %}">
+</head>
 <style>
   @keyframes background {
     0%,
@@ -47,10 +50,10 @@ Viva seus melhores momentos! {%endblock%} {%block 'conteudo'%}
           <a class="nav-link" href="{% url 'form_cliente' %}">Cadastrar</a>
         </li>
         <li class="nav-item" id="responsive">
-          <a class="nav-link" href="{% url 'editarADM' %}">Editar Meu Perfil</a>
+          <a class="nav-link" href="{% url 'editar_adm' %}">Editar Meu Perfil</a>
         </li>
       </ul>
-      <span class="navbar-text" href="{% url 'editarADM' %}" id="profile">
+      <span class="navbar-text" href="{% url 'editar_adm' %}" id="profile">
         <i class="far fa-user-circle"></i>
       </span>
     </div>

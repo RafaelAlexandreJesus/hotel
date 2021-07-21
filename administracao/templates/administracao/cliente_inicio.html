@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+
+{%block 'titulo'%}Lista clientes{%endblock%}
+
+{%block 'conteudo'%}
+<div class="container">
+    <a class="btn btn-success" href="{% url 'form_cliente_ADM' %} " style="float: right; margin: 20px 10px 0px 0px;">Cadastrar</a>
+    <h3>Clientes cadastrados</h3>
+    <table class="table" colspan="3">
+     <form method="post" action="{% url 'form_edita_cliente_ADM' %}">
+         {% csrf_token %}
+    <thead>
+        <td>ID</td>
+        <td>Nome</td>
+        <td>CPF</td>
+        <td>Telefone</td>
+        <td>Email</td>
+        <td>Senha</td>
+        <td>Profissão</td>
+        <td>Opçoes</td>
+    </thead>
+        {%for dados in listaC %}
+        <tr>
+            <td>{{dados.id}}</td>
+            <td>{{dados.nome}}</td>
+            <td>{{dados.cpf}}</td>
+            <td>{{dados.telefone}}</td>
+            <td>{{dados.email}}</td>
+            <td>{{dados.senha}}</td>
+            <td>{{dados.profissao}}</td>
+
+            <td><button class="btn btn-primary" type="submit" id="editar" name="editar" value="{{dados.id}}">Editar</button></td>
+
+        </tr>
+     </form>
+          <form method="post" action="{% url 'excluir_adm' %}">
+                {% csrf_token %}
+                <td><button class="btn btn-danger"  type="submit" id="excluir" name="excluir" value="{{dados.id}}">Excluir</button></td>
+            </form>
+        {%endfor%}
+    </table>
+</div>
+{%endblock%}

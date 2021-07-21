@@ -51,14 +51,19 @@
 
 <div class="landing">
   <h2>Área Administrativa</h2>
-    <form method="post" action="{% url 'reservarQ' %}">
+    <form method="post" action="{% url 'inicioCli' %}">
         {% csrf_token %}
-        <td><button class="btn btn-success"  type="submit" id="reservar" name="reservar" value="{{dados.numQuarto}}">Gerenciar Clientes</button></td>
+        <td><button class="btn btn-success"  type="submit" id="cli" name="cli" value="{{dados.numQuarto}}">Gerenciar Clientes</button></td>
     </form>
     <br>
     <form method="post" action="{% url 'reservarQ' %}">
          {% csrf_token %}
-         <td><button class="btn btn-success"  type="submit" id="reservar" name="reservar" value="{{dados.numQuarto}}">Gerenciar </button></td>
+         <td><button class="btn btn-success"  type="submit" id="res" name="res" value="{{dados.numQuarto}}">Gerenciar Reservas</button></td>
+    </form>
+  <br>
+   <form method="post" action="{% url 'reservarQ' %}">
+         {% csrf_token %}
+         <td><button class="btn btn-success"  type="submit" id="qua" name="qua" value="{{dados.numQuarto}}">Gerenciar Quartos</button></td>
     </form>
 </div>
 

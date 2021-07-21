@@ -3,11 +3,6 @@ import conexao
 c = conexao.conectar()
 
 def index(request):
-
-    with c.cursor() as listar:
-        sql = "select * from cliente"
-        listar.execute(sql)
-        lista = listar.fetchall()
     return render(request, 'administracao/index.html', {'listaC':lista})
 
 def formulario(request):
@@ -62,3 +57,10 @@ def excluir(request):
             return index(request)
 
     return index(request)
+
+def cliente_inicio(request):
+    with c.cursor() as listar:
+        sql = "select * from cliente"
+        listar.execute(sql)
+        lista = listar.fetchall()
+    return render(request, 'administracao/cliente_inicio.html', {'listaC':lista})
