@@ -2,8 +2,10 @@ from django.shortcuts import render
 import conexao
 c = conexao.conectar()
 
+
 def index(request):
     return render(request, 'login/index.html')
+
 
 def logar(request):
     email = request.POST.get("email")
@@ -16,9 +18,13 @@ def logar(request):
             lista = logar.fetchall()
 
             for dados in lista:
-                if dados['tipo'] == 0 :
-                    return render(request, 'administracao/index.html')
+                if dados['tipo'] == 1:
+                    return render(request, 'administracao/index.html', {'cliente': lista})
                 else:
-                    return render(request, 'login/index.html')
+                    with c.cursor() as listar:
+                        sql = "select * from quarto where status = 'Livre'"
+                        listar.execute(sql)
+                        listaQ = listar.fetchall()
+                    return render(request, 'reserva/index.html', {'listaQ': listaQ, 'listaC': lista})
 
     return render(request, 'login/index.html')
