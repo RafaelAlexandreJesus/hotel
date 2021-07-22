@@ -51,10 +51,11 @@
 
 <div class="landing">
   <h2>Quartos Disponiveis</h2>
-  <table class="table" colspan="3">
+  <table class="table" colspan="3" style="padding: 30px;">
     <thead style="color: white">
         <td>N° do Quarto</td>
         <td>Status</td>
+        <td>Ação</td>
     </thead>
          {% for dados in listaQ %}
         <tr style="color: white">
@@ -63,6 +64,9 @@
             <form method="post" action="{% url 'reservarQ' %}">
                 {% csrf_token %}
                 <td><button class="btn btn-success"  type="submit" id="reservar" name="reservar" value="{{dados.numQuarto}}">Reservar Quarto</button></td>
+                {% for dado in listaC %}
+                  <td><input type="text"  id="reservarIDcli" name="reservarIDcli" value="{{dado.id  }}" style="display: none">
+                {% endfor %}
             </form>
         </tr>
         {% endfor %}
