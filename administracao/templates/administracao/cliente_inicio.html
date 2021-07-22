@@ -1,43 +1,111 @@
-{%extends 'base.html'%}
-
-{%block 'titulo'%}Lista clientes{%endblock%}
-
-{%block 'conteudo'%}
-<div class="container">
-    <a class="btn btn-success" href="{% url 'form_cliente_ADM' %} " style="float: right; margin: 20px 10px 0px 0px;">Cadastrar</a>
+{%extends 'base.html'%} {% load static %} {%block 'titulo'%}Lista
+clientes{%endblock%} {%block 'conteudo'%}
+<style>
+  .adm-body {
+    background-image: url("{%static 'images/piscina-desc.jpg' %}");
+  }
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}">HOTEL TRIVAGO</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#footer">Contato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'form_cliente' %}">Cadastrar</a>
+        </li>
+        <li class="nav-item" id="responsive">
+          <a class="nav-link" href="{% url 'editar_adm' %}"
+            >Editar Meu Perfil</a
+          >
+        </li>
+      </ul>
+      <span class="navbar-text" href="{% url 'editar_adm' %}" id="profile">
+        <i class="far fa-user-circle"></i>
+      </span>
+    </div>
+  </div>
+</nav>
+<main class="adm-body">
+  <div class="container">
+    <a
+      class="btn btn-success"
+      href="{% url 'form_cliente_ADM' %} "
+      style="float: right; margin: 20px 10px 0px 0px"
+      >Cadastrar</a
+    >
     <h3>Clientes cadastrados</h3>
     <table class="table" colspan="3">
-     <form method="post" action="{% url 'form_edita_cliente_ADM' %}">
-         {% csrf_token %}
-    <thead>
-        <td>ID</td>
-        <td>Nome</td>
-        <td>CPF</td>
-        <td>Telefone</td>
-        <td>Email</td>
-        <td>Senha</td>
-        <td>Profissão</td>
-        <td>Opçoes</td>
-    </thead>
+      <form method="post" action="{% url 'form_edita_cliente_ADM' %}">
+        {% csrf_token %}
+        <thead>
+          <td>ID</td>
+          <td>Nome</td>
+          <td>CPF</td>
+          <td>Telefone</td>
+          <td>Email</td>
+          <td>Senha</td>
+          <td>Profissão</td>
+          <td>Opções</td>
+        </thead>
         {%for dados in listaC %}
         <tr>
-            <td>{{dados.id}}</td>
-            <td>{{dados.nome}}</td>
-            <td>{{dados.cpf}}</td>
-            <td>{{dados.telefone}}</td>
-            <td>{{dados.email}}</td>
-            <td>{{dados.senha}}</td>
-            <td>{{dados.profissao}}</td>
+          <td>{{dados.id}}</td>
+          <td>{{dados.nome}}</td>
+          <td>{{dados.cpf}}</td>
+          <td>{{dados.telefone}}</td>
+          <td>{{dados.email}}</td>
+          <td>{{dados.senha}}</td>
+          <td>{{dados.profissao}}</td>
 
-            <td><button class="btn btn-primary" type="submit" id="editar" name="editar" value="{{dados.id}}">Editar</button></td>
-
+          <td>
+            <button
+              class="btn btn-primary"
+              type="submit"
+              id="editar"
+              name="editar"
+              value="{{dados.id}}"
+            >
+              Editar
+            </button>
+          </td>
         </tr>
-     </form>
-          <form method="post" action="{% url 'excluir_adm' %}">
-                {% csrf_token %}
-                <td><button class="btn btn-danger"  type="submit" id="excluir" name="excluir" value="{{dados.id}}">Excluir</button></td>
-            </form>
-        {%endfor%}
+      </form>
     </table>
-</div>
+    <form method="post" action="{% url 'excluir_adm' %}" id="delete">
+      {% csrf_token %}
+      <button
+        class="btn btn-danger"
+        type="submit"
+        id="excluir"
+        name="excluir"
+        value="{{dados.id}}"
+      >
+        Excluir
+      </button>
+    </form>
+    {%endfor%}
+  </div>
+</main>
 {%endblock%}
