@@ -3,7 +3,7 @@ import conexao
 c = conexao.conectar()
 
 def index(request):
-    return render(request, 'administracao/index.html', {'listaC':lista})
+    return render(request, 'administracao/index.html')
 
 def formulario(request):
     return render(request, 'administracao/form_cliente.html')
